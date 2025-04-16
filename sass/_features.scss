@@ -2,13 +2,31 @@
   margin: 15rem 0;
   grid-column: center-start/center-end;
 
-  display: grid;
-  align-items: start;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 6rem;
-}
+  & {
+    @supports (display: grid) {
+      display: grid;
+      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 6rem;
+    }
+  }
 
+  @media only screen and (max-width: $bp-sm) {
+    margin: 10rem 0;
+  }
+}
 .feature {
+  float: left;
+  width: 33.33333%;
+  margin-bottom: 6rem;
+
+  & {
+    @supports (display: grid) {
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+
   display: grid;
   row-gap: 1.5rem;
   column-gap: 2.5rem;

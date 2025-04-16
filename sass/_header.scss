@@ -9,16 +9,29 @@
   background-size: contain;
   background-position: center;
 
-  padding: 9rem;
-  padding-top: 4.5rem;
+  padding: 8rem;
+  padding-top: 4rem;
+
   display: grid;
-  // grid-template-columns: max-content;
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
   justify-content: center;
   row-gap: 1.5rem;
 
+  @media only screen and (max-width: $bp-md) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    padding: 5rem;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    padding: 4rem;
+  }
+
   &__logo {
-    height: 3.5rem;
+    height: 3rem;
     justify-self: center;
   }
 
@@ -50,10 +63,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+    align-items: center;
     column-gap: 3rem;
 
     img {
-      height: 3rem;
+      max-width: 100%;
+      max-height: 3rem;
       filter: brightness(70%);
     }
   }

@@ -5,6 +5,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 7rem;
+
+  @media only screen and (max-width: $bp-sm) {
+    margin: 10rem 0;
+  }
 }
 
 .house {
@@ -65,7 +69,6 @@
     align-items: center;
     gap: 1rem;
 
-    white-space: nowrap;
     margin-left: 2rem;
     font-size: 1.5rem;
 
